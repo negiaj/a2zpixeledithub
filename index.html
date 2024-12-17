@@ -24,6 +24,122 @@
     <link rel="stylesheet" href="assets/css/twentytwenty.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <style>
+        /* Wrapper for before-after image inside the service card */
+.service_img_three .before-after-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Fixed height for demo */
+    overflow: hidden;
+}
+
+.service_img_three img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* To maintain image aspect ratio */
+}
+
+/* Before and After images */
+.before-after img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.before-after img.before {
+    clip-path: inset(0 50% 0 0); /* Show left half */
+}
+
+.before-after img.after {
+    clip-path: inset(0 0 0 50%); /* Show right half */
+}
+
+/* Overlay for Before and After Labels */
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.7); /* Semi-transparent white text */
+    background: rgba(0, 0, 0, 0.15); /* Lighter semi-transparent black background */
+    text-transform: uppercase;
+    transition: opacity 0.5s ease; /* Smooth fade-out transition */
+    pointer-events: none; /* Prevent interaction with overlay */
+}
+
+.overlay.before {
+    left: 0;
+}
+
+.overlay.after {
+    right: 0;
+}
+
+/* On hover, hide the overlay */
+.service_img_three:hover .overlay {
+    opacity: 0; /* Fade out overlays */
+}
+
+/* Optional: Style for the service card */
+.service_card {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service_card:hover {
+    transform: translateY(-10px);
+}
+
+.service_content {
+    padding: 20px;
+    text-align: center;
+}
+
+.service_title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.light_color {
+    color: #777;
+}
+
+.radius_btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.radius_btn:hover {
+    background-color: #0056b3;
+}
+
+.effectPlus {
+    position: relative;
+}
+
+.effectPlus i {
+    font-size: 1.25rem;
+}
+
+    </style>
 </head>
 
 <body>
@@ -356,8 +472,9 @@
         </div>
         <!-- about us area end  -->
 
-        <!-- .services area start  -->
-        <div class="service_area custom_animation mb-120 mobile-res-mb">
+
+         <!-- .services area start  -->
+         <div class="service_area custom_animation mb-120 mobile-res-mb">
             <div class="service_shapes">
                 <img src="./assets/img/shapes/service_right.png" class="position-absolute service_01"
                     alt="service_shapes">
@@ -377,71 +494,170 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="service_activition">
-                            <div class="service_card">
-                                <div class="service_img text-center">
-                                    <img src="./assets/img/service/service_one.jpg" alt="service_img">
-                                </div>
-                                <div class="service_content text-center">
-                                    <h3 class="service_title">Image Masking</h3>
-                                    <p class="light_color">Unlock the true potential of your photos with our expert image masking services. Achieve seamless backgrounds and refined details for a perfect finish.</p>
-                                </div>
-                                <a class="radius_btn effectPlus" href="#.html">
-                                    <i class="icon-serviceicon"></i>
-                                </a>
-                            </div>
-                            <div class="service_card">
-                                <div class="service_img service_img_two text-center service_two">
-                                    <img src="./assets/img/service/service_two.jpg" alt="service_img">
-                                </div>
-                                <div class="service_content service_content_two text-center">
-                                    <h3 class="service_title">Clipping Path</h3>
-                                    <p class="light_color">Achieve impeccable image editing with our expert clipping path services. Perfect for isolating subjects, enhancing visuals, and quality results.</p>
 
-                                </div>
-                                <a class="radius_btn effectPlus" href="#.html">
-                                    <i class="icon-serviceicon"></i>
-                                </a>
-                            </div>
+                            
                             <div class="service_card">
                                 <div class="service_img service_img_three text-center service_three">
-                                    <img src="./assets/img/service/service_three.jpg" alt="service_img">
+                                    <div class="before-after-wrapper">
+                                        <!-- Before and After Images -->
+                                        <div class="before-after">
+                                            <img src="./assets/img/service/jwellery_editing_01.jpg" class="before" alt="Before Image">
+                                            <img src="./assets/img/service/jwellery_editing_02.jpg" class="after" alt="After Image">
+                                        </div>
+                                        <!-- Overlay for Before and After Labels -->
+                                        <div class="overlay before">Before</div>
+                                        <div class="overlay after">After</div>
+                                    </div>
+                                    <!-- <img src="./assets/img/service/service_three.jpg" alt="service_img"> -->
+                                </div>
+                                <div class="service_content text-center">
+                                    <h3 class="service_title">Jewellery Editing</h3>
+                                    <p class="light_color">Showcase your jewellry with flawless editing to highlight intricate details and brilliance. Enhance colors, reflections, and textures for stunning, high-quality visuals</p>                                    
+                                </div>                             
+                            </div>
+
+                            
+                            <div class="service_card">
+                                <div class="service_img service_img_three text-center service_three">
+                                    <div class="before-after-wrapper">
+                                        <!-- Before and After Images -->
+                                        <div class="before-after">
+                                            <img src="./assets/img/service/real_estate_01.jpg" class="before" alt="Before Image">
+                                            <img src="./assets/img/service/real_estate_02.jpg" class="after" alt="After Image">
+                                        </div>
+                                        <!-- Overlay for Before and After Labels -->
+                                        <div class="overlay before">Before</div>
+                                        <div class="overlay after">After</div>
+                                    </div>
+                                    <!-- <img src="./assets/img/service/service_three.jpg" alt="service_img"> -->
+                                </div>
+                                <div class="service_content text-center">
+                                    <h3 class="service_title">Real estate editing</h3>
+                                    <p class="light_color">Transform your real estate photos with expert editing services. Enhance lighting, colors, refine and details to create stunning, market-ready visuals of the real estates.</p>                                    
+                                </div>
+                            </div>                    
+
+                            <div class="service_card">
+                                <div class="service_img service_img_three text-center service_three">
+                                    <div class="before-after-wrapper">
+                                        <!-- Before and After Images -->
+                                        <div class="before-after">
+                                            <img src="./assets/img/service/color_correction_01.jpg" class="before" alt="Before Image">
+                                            <img src="./assets/img/service/color_correction_02.jpg" class="after" alt="After Image">
+                                        </div>
+                                        <!-- Overlay for Before and After Labels -->
+                                        <div class="overlay before">Before</div>
+                                        <div class="overlay after">After</div>
+                                    </div>
+                                    <!-- <img src="./assets/img/service/service_three.jpg" alt="service_img"> -->
+                                </div>
+                                <div class="service_content text-center">
+                                    <h3 class="service_title">Color correction</h3>
+                                    <p class="light_color">Transform your real estate photos with expert editing services. Enhance lighting, colors, refine and details to create stunning, market-ready visuals of the real estates.</p>                                    
+                                </div>
+                            </div>
+
+                            <div class="service_card">
+                                <div class="service_img service_img_three text-center service_three">
+                                    <div class="before-after-wrapper">
+                                        <!-- Before and After Images -->
+                                        <div class="before-after">
+                                            <img src="./assets/img/service/multi_clipping_01.jpg" class="before" alt="Before Image">
+                                            <img src="./assets/img/service/multi_clipping_02.jpg" class="after" alt="After Image">
+                                        </div>
+                                        <!-- Overlay for Before and After Labels -->
+                                        <div class="overlay before">Before</div>
+                                        <div class="overlay after">After</div>
+                                    </div>
+                                    <!-- <img src="./assets/img/service/service_three.jpg" alt="service_img"> -->
                                 </div>
                                 <div class="service_content text-center">
                                     <h3 class="service_title">Multi-clipping Path</h3>
                                     <p class="light_color">Enhance your images with precise multi-clipping path services for flawless editing. Perfect for complex designs and professional results every time.</p>
-
                                 </div>
-                                <a class="radius_btn effectPlus" href="#.html">
-                                    <i class="icon-serviceicon"></i>
-                                </a>
                             </div>
-                            <div class="service_card">
-                                <div class="service_img service_img_four text-center">
-                                    <img src="./assets/img/service/service_four.jpg" alt="service_img">
-                                </div>
-                                <div class="service_content text-center">
-                                    <h3 class="service_title">Background</h3>
-                                    <p class="light_color">Enhance your images with seamless background editing! Perfectly tailored to highlight your subject and create stunning visuals.</p>
 
-                                </div>
-                                <a class="radius_btn effectPlus" href="#.html">
-                                    <i class="icon-serviceicon"></i>
-                                </a>
-                            </div>
+
                             <div class="service_card">
-                                <div class="service_img service_img_five text-center">
-                                    <img src="./assets/img/service/service_one.jpg" alt="service_img">
+                                <div class="service_img service_img_three text-center service_three">
+                                    <div class="before-after-wrapper">
+                                        <!-- Before and After Images -->
+                                        <div class="before-after">
+                                            <img src="./assets/img/service/background_01.jpg" class="before" alt="Before Image">
+                                            <img src="./assets/img/service/background_02.jpg" class="after" alt="After Image">
+                                        </div>
+                                        <!-- Overlay for Before and After Labels -->
+                                        <div class="overlay before">Before</div>
+                                        <div class="overlay after">After</div>
+                                    </div>
+                                    <!-- <img src="./assets/img/service/service_three.jpg" alt="service_img"> -->
                                 </div>
                                 <div class="service_content text-center">
                                     <h3 class="service_title">Image Masking</h3>
                                     <p class="light_color">Unlock the true potential of your photos with our expert image masking services. Achieve seamless backgrounds and refined details for a perfect finish.</p>
-
                                 </div>
-                                <a class="radius_btn effectPlus" href="#.html">
-                                    <i class="icon-serviceicon"></i>
-                                </a>
                             </div>
-                        </div>
+
+
+                            <div class="service_card">
+                                <div class="service_img service_img_three text-center service_three">
+                                    <div class="before-after-wrapper">
+                                        <!-- Before and After Images -->
+                                        <div class="before-after">
+                                            <img src="./assets/img/service/background_01.jpg" class="before" alt="Before Image">
+                                            <img src="./assets/img/service/background_02.jpg" class="after" alt="After Image">
+                                        </div>
+                                        <!-- Overlay for Before and After Labels -->
+                                        <div class="overlay before">Before</div>
+                                        <div class="overlay after">After</div>
+                                    </div>
+                                    <!-- <img src="./assets/img/service/service_three.jpg" alt="service_img"> -->
+                                </div>
+                                <div class="service_content text-center">
+                                    <h3 class="service_title">Background</h3>
+                                    <p class="light_color">Enhance your images with seamless background editing! Perfectly tailored to highlight your subject and create stunning visuals.</p>
+                                </div>
+                            </div>
+
+                            <div class="service_card">
+                                <div class="service_img service_img_three text-center service_three">
+                                    <div class="before-after-wrapper">
+                                        <!-- Before and After Images -->
+                                        <div class="before-after">
+                                            <img src="./assets/img/service/clipping_path_01.jpg" class="before" alt="Before Image">
+                                            <img src="./assets/img/service/clipping_path_02.jpg" class="after" alt="After Image">
+                                        </div>
+                                        <!-- Overlay for Before and After Labels -->
+                                        <div class="overlay before">Before</div>
+                                        <div class="overlay after">After</div>
+                                    </div>
+                                    <!-- <img src="./assets/img/service/service_three.jpg" alt="service_img"> -->
+                                </div>
+                                <div class="service_content text-center">
+                                    <h3 class="service_title">Clipping Path</h3>
+                                    <p class="light_color">Achieve impeccable image editing with our expert clipping path services. Perfect for isolating subjects, enhancing visuals, and quality results.</p>
+                                </div>
+                            </div>
+
+                            <div class="service_card">
+                                <div class="service_img service_img_three text-center service_three">
+                                    <div class="before-after-wrapper">
+                                        <!-- Before and After Images -->
+                                        <div class="before-after">
+                                            <img src="./assets/img/service/model_retouch_01.jpg" class="before" alt="Before Image">
+                                            <img src="./assets/img/service/model_retouch_02.jpg" class="after" alt="After Image">
+                                        </div>
+                                        <!-- Overlay for Before and After Labels -->
+                                        <div class="overlay before">Before</div>
+                                        <div class="overlay after">After</div>
+                                    </div>
+                                    <!-- <img src="./assets/img/service/service_three.jpg" alt="service_img"> -->
+                                </div>
+                                <div class="service_content text-center">
+                                    <h3 class="service_title">Model retouch</h3>
+                                    <p class="light_color">Achieve flawless, natural-looking results with expert model retouching. Enhance skin tone, smooth imperfections, and highlight features for stunning portraits.</p>
+                                </div>
+                            </div>                            
                     </div>
                 </div>
             </div>
@@ -449,7 +665,7 @@
         <!-- .services area end  -->
 
         <!-- process area start  -->
-        <div class="process_area mb-120 mobile-res-mb">
+        <div class="process_area mb-120 mobile-res-mb" style="margin-top: 20px;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

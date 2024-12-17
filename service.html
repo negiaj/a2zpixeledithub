@@ -25,6 +25,99 @@
     <link rel="stylesheet" href="assets/css/twentytwenty.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <style>
+        /* Wrapper for before-after image */
+        .before-after-wrapper {
+            position: relative;
+            width: 100%;
+            height: 250px; /* Fixed height for demo */
+            overflow: hidden;
+        }
+
+        .before-after img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .before-after img.before {
+            clip-path: inset(0 50% 0 0); /* Show left half */
+        }
+
+        .before-after img.after {
+            clip-path: inset(0 0 0 50%); /* Show right half */
+        }
+/* Overlay for Before and After Labels */
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.7); /* Semi-transparent white text */
+    background: rgba(0, 0, 0, 0.15); /* Lighter semi-transparent black background */
+    text-transform: uppercase;
+    transition: opacity 0.5s ease; /* Smooth fade-out transition */
+    pointer-events: none; /* Ensure it doesn't block interactions */
+}
+
+.overlay.before {
+    left: 0;
+}
+
+.overlay.after {
+    right: 0;
+}
+
+/* On hover, hide the overlay */
+.before-after-wrapper:hover .overlay {
+    opacity: 0; /* Fade out overlay completely */
+}
+
+
+        /* Service Card Styles */
+        .service_two_card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service_two_card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service_two__content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .service_two__content h4 a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .service_two__content p {
+            color: #555;
+        }
+
+        .service_two__content a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
@@ -276,75 +369,195 @@
 
     <!-- breadcrumb_area end  -->
 
-    <!-- services area start  -->
     <div class="service_two mb-90 pt-120">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-4">
+                <!-- Service Card 1 -->
+                <div class="col-md-4 col-lg-4">
                     <div class="service_two_card">
-                        <div class="service_two__image">
-                            <img src="./assets/img/home_two_ass/product/product_01.jpg" alt="">
+                        <!-- Before and After Images -->
+                        <div class="service_two__image before-after-wrapper">
+                            <div class="before-after">
+                                <img src="./assets/img/home_two_ass/product/background_01.jpg" class="before" alt="Before Image">
+                                <img src="./assets/img/home_two_ass/product/background_02.jpg" class="after" alt="After Image">
+                            </div>
+                            <!-- Overlays -->
+                            <div class="overlay before">Before</div>
+                            <div class="overlay after">After</div>
                         </div>
+                        <!-- Content -->
                         <div class="service_two__content">
                             <h4><a href="service.html">Image Masking</a></h4>
-                            <p>Refine your visuals with precise image masking for flawless integration. Enhance clarity and focus to create stunning, user-centric designs.</p>
-                            <a href="service.html">More Details<i class="fas fa-chevron-right"></i>
-                            </a>
+                            <p>Refine your visuals with precise image masking for flawless integration. Enhance clarity and focus to create stunning, user-centric and quality designs.</p>
+                            <a href="service.html">More Details<i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
+
+                <!-- Repeat this block for other cards -->
+                 <!-- Service Card 1 -->
+                <div class="col-md-4 col-lg-4">
                     <div class="service_two_card">
-                        <div class="service_two__image">
-                            <img src="./assets/img/home_two_ass/product/product_02.jpg" alt="">
+                        <!-- Before and After Images -->
+                        <div class="service_two__image before-after-wrapper">
+                            <div class="before-after">
+                                <img src="./assets/img/home_two_ass/product/clipping_path_01.jpg" class="before" alt="Before Image">
+                                <img src="./assets/img/home_two_ass/product/clipping_path_02.jpg" class="after" alt="After Image">
+                            </div>
+                            <!-- Overlays -->
+                            <div class="overlay before">Before</div>
+                            <div class="overlay after">After</div>
                         </div>
+                        <!-- Content -->
                         <div class="service_two__content">
                             <h4><a href="service.html">Clipping Path</a></h4>
                             <p>Achieve impeccable image editing with our expert clipping path services. Perfect for isolating subjects, enhancing visuals, and delivering professional-quality results.</p>
-                            <a href="service.html">More Details<i class="fas fa-chevron-right"></i>
-                            </a>
+                            <a href="service.html">More Details<i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
+
+                <!-- Service Card 1 -->
+                <div class="col-md-4 col-lg-4">
                     <div class="service_two_card">
-                        <div class="service_two__image">
-                            <img src="./assets/img/home_two_ass/product/product_03.jpg" alt="">
+                        <!-- Before and After Images -->
+                        <div class="service_two__image before-after-wrapper">
+                            <div class="before-after">
+                                <img src="./assets/img/home_two_ass/product/multi_clipping_01.jpg" class="before" alt="Before Image">
+                                <img src="./assets/img/home_two_ass/product/multi_clipping_02.jpg" class="after" alt="After Image">
+                            </div>
+                            <!-- Overlays -->
+                            <div class="overlay before">Before</div>
+                            <div class="overlay after">After</div>
                         </div>
+                        <!-- Content -->
                         <div class="service_two__content">
                             <h4><a href="service.html">Multi-clipping</a></h4>
                             <p>Enhance your images with precise multi-clipping path services for flawless editing. </br>Perfect for complex designs and professional results every time.</p>
-                            <a href="service.html">More Details<i class="fas fa-chevron-right"></i>
-                            </a>
+                            <a href="service.html">More Details<i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
+            </div>
+
+            <div class="row">
+                <!-- Service Card 1 -->
+                <div class="col-md-4 col-lg-4">
                     <div class="service_two_card">
-                        <div class="service_two__image">
-                            <img src="./assets/img/home_two_ass/product/product_04.jpg" alt="">
+                        <!-- Before and After Images -->
+                        <div class="service_two__image before-after-wrapper">
+                            <div class="before-after">
+                                <img src="./assets/img/home_two_ass/product/background_01.jpg" class="before" alt="Before Image">
+                                <img src="./assets/img/home_two_ass/product/background_02.jpg" class="after" alt="After Image">
+                            </div>
+                            <!-- Overlays -->
+                            <div class="overlay before">Before</div>
+                            <div class="overlay after">After</div>
                         </div>
+                        <!-- Content -->
                         <div class="service_two__content">
                             <h4><a href="service.html">Background</a></h4>
-                            <p>Enhance your images with seamless background editing! Perfectly tailored to highlight your subject and create stunning visuals.</p>
-                            <a href="service.html">More Details<i class="fas fa-chevron-right"></i>
-                            </a>
+                            <p>Enhance your images with seamless background editing! Perfectly tailored to highlight your subject, improve visual appeal, and create stunning, professional-grade visuals.</p>
+                            <a href="service.html">More Details<i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
+
+                <!-- Repeat this block for other cards -->
+                 <!-- Service Card 1 -->
+                <div class="col-md-4 col-lg-4">
                     <div class="service_two_card">
-                        <div class="service_two__image">
-                            <img src="./assets/img/home_two_ass/product/product_05.jpg" alt="">
+                        <!-- Before and After Images -->
+                        <div class="service_two__image before-after-wrapper">
+                            <div class="before-after">
+                                <img src="./assets/img/home_two_ass/product/jwellery_editing_01.jpg" class="before" alt="Before Image">
+                                <img src="./assets/img/home_two_ass/product/jwellery_editing_02.jpg" class="after" alt="After Image">
+                            </div>
+                            <!-- Overlays -->
+                            <div class="overlay before">Before</div>
+                            <div class="overlay after">After</div>
                         </div>
+                        <!-- Content -->
                         <div class="service_two__content">
-                            <h4><a href="service.html">Shadow making</a></h4>
-                            <p>Add depth and dimension to your visuals with our expert shadow-making services. </br>Elevate your designs for a more realistic and captivating user experience.</p>
-                            <a href="service.html">More Details<i class="fas fa-chevron-right"></i>
-                            </a>
+                            <h4><a href="service.html">Jewellery editing</a></h4>
+                            <p>Showcase your jewellry with flawless editing to highlight intricate details and brilliance. Enhance colors, reflections, and textures for stunning, high-quality visuals</p>
+                            <a href="service.html">More Details<i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Service Card 1 -->
+                <div class="col-md-4 col-lg-4">
+                    <div class="service_two_card">
+                        <!-- Before and After Images -->
+                        <div class="service_two__image before-after-wrapper">
+                            <div class="before-after">
+                                <img src="./assets/img/home_two_ass/product/real_estate_01.jpg" class="before" alt="Before Image">
+                                <img src="./assets/img/home_two_ass/product/real_estate_02.jpg" class="after" alt="After Image">
+                            </div>
+                            <!-- Overlays -->
+                            <div class="overlay before">Before</div>
+                            <div class="overlay after">After</div>
+                        </div>
+                        <!-- Content -->
+                        <div class="service_two__content">
+                            <h4><a href="service.html">Real estate editing</a></h4>
+                            <p>Transform your real estate photos with expert editing services. Enhance lighting, colors, refine and details to create stunning, market-ready visuals of the real estates.</p>
+                            <a href="service.html">More Details<i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <!-- Service Card 1 -->
+                <div class="col-md-4 col-lg-4">
+                    <div class="service_two_card">
+                        <!-- Before and After Images -->
+                        <div class="service_two__image before-after-wrapper">
+                            <div class="before-after">
+                                <img src="./assets/img/home_two_ass/product/model_retouch_01.jpg" class="before" alt="Before Image">
+                                <img src="./assets/img/home_two_ass/product/model_retouch_02.jpg" class="after" alt="After Image">
+                            </div>
+                            <!-- Overlays -->
+                            <div class="overlay before">Before</div>
+                            <div class="overlay after">After</div>
+                        </div>
+                        <!-- Content -->
+                        <div class="service_two__content">
+                            <h4><a href="service.html">Model retouch</a></h4>
+                            <p>Achieve flawless, natural-looking results with expert model retouching. Enhance skin tone, smooth imperfections, and highlight features for stunning portraits.</p>
+                            <a href="service.html">More Details<i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repeat this block for other cards -->
+                 <!-- Service Card 1 -->
+                <div class="col-md-4 col-lg-4">
+                    <div class="service_two_card">
+                        <!-- Before and After Images -->
+                        <div class="service_two__image before-after-wrapper">
+                            <div class="before-after">
+                                <img src="./assets/img/home_two_ass/product/color_correction_01.jpg" class="before" alt="Before Image">
+                                <img src="./assets/img/home_two_ass/product/color_correction_02.jpg" class="after" alt="After Image">
+                            </div>
+                            <!-- Overlays -->
+                            <div class="overlay before">Before</div>
+                            <div class="overlay after">After</div>
+                        </div>
+                        <!-- Content -->
+                        <div class="service_two__content">
+                            <h4><a href="service.html">Color correction</a></h4>
+                            <p>Perfect your images with professional color correction to enhance vibrancy and accuracy. Adjust tones, brightness, and contrast for a polished, natural look.</p>
+                            <a href="service.html">More Details<i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 1 -->
                 <div class="col-md-6 col-lg-4">
                     <a href="service.html" class="load_icon">
                         <div class="arrow-right">
@@ -355,6 +568,7 @@
             </div>
         </div>
     </div>
+        
     <!-- services area start  -->
 
 
