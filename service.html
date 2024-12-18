@@ -26,30 +26,66 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <style>
-        /* Wrapper for before-after image */
-        .before-after-wrapper {
-            position: relative;
-            width: 100%;
-            height: 250px; /* Fixed height for demo */
-            overflow: hidden;
-        }
+ /* Wrapper for before-after image */
+.before-after-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Fixed height for demo */
+    overflow: hidden;
+}
 
-        .before-after img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+/* Images */
+.before-after img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .before-after img.before {
-            clip-path: inset(0 50% 0 0); /* Show left half */
-        }
+.before-after img.before {
+    clip-path: inset(0 50% 0 0); /* Show left half */
+}
 
-        .before-after img.after {
-            clip-path: inset(0 0 0 50%); /* Show right half */
-        }
+.before-after img.after {
+    clip-path: inset(0 0 0 50%); /* Show right half */
+}
+
+/* Vertical divider */
+.vertical-divider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    z-index: 2; /* Above images */
+    pointer-events: none; /* Prevent interaction */
+}
+
+/* Left and Right arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    z-index: 3; /* Above images and divider */
+    pointer-events: none; /* Prevent interaction */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth fade-in transition */
+}
+
+.arrow.left {
+    left: calc(50% - 20px); /* Position arrow near the left of the divider */
+}
+
+.arrow.right {
+    left: calc(50% + 20px); /* Position arrow near the right of the divider */
+}
+
 /* Overlay for Before and After Labels */
 .overlay {
     position: absolute;
@@ -63,10 +99,11 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: rgba(255, 255, 255, 0.7); /* Semi-transparent white text */
-    background: rgba(0, 0, 0, 0.15); /* Lighter semi-transparent black background */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
     text-transform: uppercase;
-    transition: opacity 0.5s ease; /* Smooth fade-out transition */
-    pointer-events: none; /* Ensure it doesn't block interactions */
+    opacity: 0; /* Initially hidden */
+    pointer-events: none; /* Prevent interaction */
+    transition: opacity 0.5s ease; /* Smooth fade-in transition */
 }
 
 .overlay.before {
@@ -77,46 +114,15 @@
     right: 0;
 }
 
-/* On hover, hide the overlay */
+/* Show overlays and arrows on hover */
 .before-after-wrapper:hover .overlay {
-    opacity: 0; /* Fade out overlay completely */
+    opacity: 1; /* Fade in overlays */
 }
 
+.before-after-wrapper:hover .arrow {
+    opacity: 1; /* Fade in arrows */
+}
 
-        /* Service Card Styles */
-        .service_two_card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .service_two_card:hover {
-            transform: translateY(-10px);
-        }
-
-        .service_two__content {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .service_two__content h4 a {
-            color: #333;
-            text-decoration: none;
-        }
-
-        .service_two__content p {
-            color: #555;
-        }
-
-        .service_two__content a {
-            display: inline-block;
-            margin-top: 10px;
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
     </style>
 </head>
 
@@ -372,6 +378,7 @@
     <div class="service_two mb-90 pt-120">
         <div class="container">
             <div class="row">
+
                 <!-- Service Card 1 -->
                 <div class="col-md-4 col-lg-4">
                     <div class="service_two_card">
@@ -381,6 +388,11 @@
                                 <img src="./assets/img/home_two_ass/product/background_01.jpg" class="before" alt="Before Image">
                                 <img src="./assets/img/home_two_ass/product/background_02.jpg" class="after" alt="After Image">
                             </div>
+                                      <!-- Vertical divider -->
+                            <div class="vertical-divider"></div>
+                            <!-- Left and Right arrows -->
+                            <div class="arrow left">&larr;</div>
+                            <div class="arrow right">&rarr;</div>
                             <!-- Overlays -->
                             <div class="overlay before">Before</div>
                             <div class="overlay after">After</div>
@@ -404,6 +416,10 @@
                                 <img src="./assets/img/home_two_ass/product/clipping_path_01.jpg" class="before" alt="Before Image">
                                 <img src="./assets/img/home_two_ass/product/clipping_path_02.jpg" class="after" alt="After Image">
                             </div>
+                            <div class="vertical-divider"></div>
+                            <!-- Left and Right arrows -->
+                            <div class="arrow left">&larr;</div>
+                            <div class="arrow right">&rarr;</div>
                             <!-- Overlays -->
                             <div class="overlay before">Before</div>
                             <div class="overlay after">After</div>
@@ -426,6 +442,10 @@
                                 <img src="./assets/img/home_two_ass/product/multi_clipping_01.jpg" class="before" alt="Before Image">
                                 <img src="./assets/img/home_two_ass/product/multi_clipping_02.jpg" class="after" alt="After Image">
                             </div>
+                            <div class="vertical-divider"></div>
+                            <!-- Left and Right arrows -->
+                            <div class="arrow left">&larr;</div>
+                            <div class="arrow right">&rarr;</div>
                             <!-- Overlays -->
                             <div class="overlay before">Before</div>
                             <div class="overlay after">After</div>
@@ -450,6 +470,10 @@
                                 <img src="./assets/img/home_two_ass/product/background_01.jpg" class="before" alt="Before Image">
                                 <img src="./assets/img/home_two_ass/product/background_02.jpg" class="after" alt="After Image">
                             </div>
+                            <div class="vertical-divider"></div>
+                            <!-- Left and Right arrows -->
+                            <div class="arrow left">&larr;</div>
+                            <div class="arrow right">&rarr;</div>
                             <!-- Overlays -->
                             <div class="overlay before">Before</div>
                             <div class="overlay after">After</div>
@@ -473,6 +497,10 @@
                                 <img src="./assets/img/home_two_ass/product/jwellery_editing_01.jpg" class="before" alt="Before Image">
                                 <img src="./assets/img/home_two_ass/product/jwellery_editing_02.jpg" class="after" alt="After Image">
                             </div>
+                            <div class="vertical-divider"></div>
+                            <!-- Left and Right arrows -->
+                            <div class="arrow left">&larr;</div>
+                            <div class="arrow right">&rarr;</div>
                             <!-- Overlays -->
                             <div class="overlay before">Before</div>
                             <div class="overlay after">After</div>
@@ -495,6 +523,10 @@
                                 <img src="./assets/img/home_two_ass/product/real_estate_01.jpg" class="before" alt="Before Image">
                                 <img src="./assets/img/home_two_ass/product/real_estate_02.jpg" class="after" alt="After Image">
                             </div>
+                            <div class="vertical-divider"></div>
+                            <!-- Left and Right arrows -->
+                            <div class="arrow left">&larr;</div>
+                            <div class="arrow right">&rarr;</div>
                             <!-- Overlays -->
                             <div class="overlay before">Before</div>
                             <div class="overlay after">After</div>
@@ -521,6 +553,10 @@
                                 <img src="./assets/img/home_two_ass/product/model_retouch_01.jpg" class="before" alt="Before Image">
                                 <img src="./assets/img/home_two_ass/product/model_retouch_02.jpg" class="after" alt="After Image">
                             </div>
+                            <div class="vertical-divider"></div>
+                            <!-- Left and Right arrows -->
+                            <div class="arrow left">&larr;</div>
+                            <div class="arrow right">&rarr;</div>
                             <!-- Overlays -->
                             <div class="overlay before">Before</div>
                             <div class="overlay after">After</div>
@@ -544,6 +580,10 @@
                                 <img src="./assets/img/home_two_ass/product/color_correction_01.jpg" class="before" alt="Before Image">
                                 <img src="./assets/img/home_two_ass/product/color_correction_02.jpg" class="after" alt="After Image">
                             </div>
+                            <div class="vertical-divider"></div>
+                            <!-- Left and Right arrows -->
+                            <div class="arrow left">&larr;</div>
+                            <div class="arrow right">&rarr;</div>
                             <!-- Overlays -->
                             <div class="overlay before">Before</div>
                             <div class="overlay after">After</div>
