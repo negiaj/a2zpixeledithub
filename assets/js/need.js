@@ -509,6 +509,15 @@
 	});
 	//slider js
 	$("#container1").twentytwenty();
+	$("#container2").twentytwenty();
+	$("#container3").twentytwenty();
+	$("#container4").twentytwenty();
+	$("#container5").twentytwenty();
+	$("#container6").twentytwenty();
+	$("#container7").twentytwenty();
+	$("#container8").twentytwenty();
+	$("#container9").twentytwenty();
+
 	
 
 
