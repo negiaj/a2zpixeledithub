@@ -525,6 +525,15 @@
 	$("#container15").twentytwenty();
 	$("#container16").twentytwenty();
 
+	$("#container17").twentytwenty();
+	$("#container18").twentytwenty();
+	$("#container19").twentytwenty();
+	$("#container20").twentytwenty();
+	$("#container21").twentytwenty();
+	$("#container22").twentytwenty();
+	$("#container23").twentytwenty();
+	$("#container24").twentytwenty();
+
 	
 
 
