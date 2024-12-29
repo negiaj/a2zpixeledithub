@@ -537,6 +537,19 @@
 	$("#container8").twentytwenty();
 	$("#container9").twentytwenty();
 	
+	$("#container10").twentytwenty();
+	
+	$("#container11").twentytwenty();
+	
+	$("#container12").twentytwenty();
+	
+	$("#container13").twentytwenty();
+	
+	$("#container14").twentytwenty();
+	$("#container15").twentytwenty();
+	$("#container16").twentytwenty();
+	$("#container17").twentytwenty();
+	
 // faq
 	$('.faq-wrapper .faq-title').on('click', function (e) {
 		var element = $(this).parent('.faq-item');
