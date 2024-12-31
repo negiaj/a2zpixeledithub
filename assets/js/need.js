@@ -524,7 +524,6 @@
 	$("#container14").twentytwenty();
 	$("#container15").twentytwenty();
 	$("#container16").twentytwenty();
-
 	$("#container17").twentytwenty();
 	$("#container18").twentytwenty();
 	$("#container19").twentytwenty();
