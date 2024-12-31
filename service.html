@@ -25,105 +25,7 @@
     <link rel="stylesheet" href="assets/css/twentytwenty.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-    <style>
- /* Wrapper for before-after image */
-.before-after-wrapper {
-    position: relative;
-    width: 100%;
-    height: 250px; /* Fixed height for demo */
-    overflow: hidden;
-}
-
-/* Images */
-.before-after img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.before-after img.before {
-    clip-path: inset(0 50% 0 0); /* Show left half */
-}
-
-.before-after img.after {
-    clip-path: inset(0 0 0 50%); /* Show right half */
-}
-
-/* Vertical divider */
-.vertical-divider {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-    z-index: 2; /* Above images */
-    pointer-events: none; /* Prevent interaction */
-}
-
-/* Left and Right arrows */
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-    z-index: 3; /* Above images and divider */
-    pointer-events: none; /* Prevent interaction */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease; /* Smooth fade-in transition */
-}
-
-.arrow.left {
-    left: calc(50% - 20px); /* Position arrow near the left of the divider */
-}
-
-.arrow.right {
-    left: calc(50% + 20px); /* Position arrow near the right of the divider */
-}
-
-/* Overlay for Before and After Labels */
-.overlay {
-    position: absolute;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.7); /* Semi-transparent white text */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    text-transform: uppercase;
-    opacity: 0; /* Initially hidden */
-    pointer-events: none; /* Prevent interaction */
-    transition: opacity 0.5s ease; /* Smooth fade-in transition */
-}
-
-.overlay.before {
-    left: 0;
-}
-
-.overlay.after {
-    right: 0;
-}
-
-/* Show overlays and arrows on hover */
-.before-after-wrapper:hover .overlay {
-    opacity: 1; /* Fade in overlays */
-}
-
-.before-after-wrapper:hover .arrow {
-    opacity: 1; /* Fade in arrows */
-}
-
-    </style>
+    <script src="assets/js/main.js"></script>
 </head>
 
 <body>
@@ -1082,7 +984,7 @@
     <script src="assets/js/multiple-image-video(MIV).js"></script>
     <script src="assets/js/preloader.js"></script>
     <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    
 </body>
 
 </html>
